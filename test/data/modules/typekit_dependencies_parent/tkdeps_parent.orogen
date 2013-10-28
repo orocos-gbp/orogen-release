@@ -1,0 +1,3 @@
+name 'tkdeps_parent'
+
+import_types_from "subdir/tkdeps_parent.h"

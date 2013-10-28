@@ -1,0 +1,16 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+libdir=${prefix}/lib/orocos
+includedir=${prefix}/include/orocos
+
+project_name=<%= component.name %>
+deffile=${prefix}/share/orogen/<%= File.basename(component.deffile) %>
+<%=
+if component.typekit(false)
+    "type_registry=${prefix}/share/orogen/#{component.name}.tlb"
+end
+%>
+
+Name: <%= component.name %>
+Version: <%= component.version %>
+Description: the definition file for the orogen project itself

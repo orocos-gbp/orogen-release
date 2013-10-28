@@ -1,0 +1,37 @@
+# This module is used primarily in TC_GenerationTypekit#test_opaque in
+# test_typekit.rb. It is also used in
+# TC_GenerationDeployment#test_cross_dependencies in test_deployment.rb.
+#
+# It demonstrates the capabilities that orogen has to marshal opaque types
+# through a user-provided intermediate type. In this test, a
+# NotOrogenCompatible::Point2D type is defined, that is unknown to orogen. Then,
+# the user provides an intermediate type (TestOpaque::Point2D) that can be
+# handled by orogen, and the user provides convertion functions between those
+# types (see typekit/*User.*).
+name "opaque"
+
+typekit do
+    # Define an opaque type by giving its name, the intermediate type that will
+    # be used for typekit generation and the include files that define it.
+    opaque_type '/NotOrogenCompatible/Point2D', 'TestOpaque/Point2D'
+
+    # opaque_type name_of_real_type, name_of_intermediate_type,
+    #    :includes => [include_file_1, include_file_2]
+
+    # We want to use boost::shared_ptr to hold vector<float>, to avoid
+    # unnecessary copies
+    opaque_type '/boost/shared_ptr</std/vector</float>>', '/std/vector</float>',
+        :includes => ['vector', '/usr/include/boost/shared_ptr.hpp'], :needs_copy => false
+
+    # Also test the shared_ptr and ro_ptr shortcuts
+    shared_ptr '/std/vector</int>', :includes => ['vector']
+    ro_ptr '/std/vector</int>', :includes => ['vector']
+
+    # Load the file that defines TestOpaque::Point2D
+    load 'opaque_intermediates.h'
+end
+
+# Generate an empty deployment for testing
+deployment "test_opaque" do
+end
+

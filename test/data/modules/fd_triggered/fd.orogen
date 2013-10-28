@@ -1,0 +1,23 @@
+# This module is used in TC_GenerationDeployment#test_fd_driven_deployment in
+# test_deployment.rb.
+#
+# It demonstrates IO-driven tasks
+name 'fd'
+
+# This task context will be IO-driven. It requires the FD_DRIVEN_TEST_FILE
+# environment variable to contain the file descriptor it should listen to, and
+# expects the character sequence 'ABCDE' to be written on it. It will exit(0) if
+# the right sequence is sent, and exit(1) otherwise.
+task_context 'Consumer' do
+    needs_configuration
+    fd_driven
+end
+
+deployment "fd" do
+    enable_corba
+    # There is no need to specify the activity. The FileDescriptorActivity
+    # activity is defined as default for Consumer
+    consumer = task("consumer", 'Consumer').
+        start
+end
+

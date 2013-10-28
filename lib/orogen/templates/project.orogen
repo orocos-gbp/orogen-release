@@ -1,0 +1,6 @@
+<% if !component.enabled_transports.empty? %>
+enable_transports('<%= component.enabled_transports.sort.join("', '") %>')
+<% end %>
+self.extended_states = <%= Orocos::Generation.extended_states_enabled? %>
+
+<%= File.read(component.deffile) %>

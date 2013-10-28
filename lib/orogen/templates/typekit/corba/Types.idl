@@ -1,0 +1,18 @@
+/* Generated from orogen/lib/orogen/templates/typekit/corba/Types.idl */
+
+#ifndef __OROGEN_TYPEKIT_<%= typekit.name.upcase %>_IDL__
+#define __OROGEN_TYPEKIT_<%= typekit.name.upcase %>_IDL__
+
+<% typekit.used_typekits.each do |tk| %>
+<% next if tk.virtual? %>
+#include <<%= tk.name %>/transports/corba/<%= tk.name %>Types.idl>
+<% end %>
+
+<%= idl_registry.export 'idl',
+	:namespace_prefix => 'orogen',
+    :namespace_suffix => 'Corba',
+    :opaque_as_any => true,
+    :selected => typekit.self_typenames %>
+
+#endif
+

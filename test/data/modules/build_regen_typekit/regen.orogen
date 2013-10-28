@@ -1,0 +1,9 @@
+name 'regen'
+
+using_library "build_regen_library"
+
+typekit do
+    load "test.h"
+    load "regen_lib.h"
+end
+

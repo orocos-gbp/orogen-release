@@ -1,0 +1,27 @@
+# This module is used in TC_GenerationScripting#test_numeric in
+# test_scripting.rb.
+#
+# It tests the generation of modules that use various numeric types.
+name 'numerics'
+version '0.1'
+
+import_types_from "numerics.h"
+
+task_context "Test" do
+    method("m2").
+        argument("a", "int").
+        argument("b", "unsigned int")
+
+    method("m3").
+        argument("d", "double")
+
+    method("m4").
+        argument("e", "/numerics/Bla")
+end
+
+deployment "test_numerics" do
+    test = task("test", "Test").
+        periodic(1).
+        start
+end
+
