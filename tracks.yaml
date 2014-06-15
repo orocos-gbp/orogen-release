@@ -17,5 +17,5 @@ tracks:
     release_tag: :{ask}
     ros_distro: hydro
     vcs_type: git
-    vcs_uri: https://git.gitorious.org/orocos-toolchain/orogen.git
+    vcs_uri: https://github.com/orocos-toolchain/orogen.git
     version: :{ask}
