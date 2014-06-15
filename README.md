@@ -1,3 +1,22 @@
+## orogen (hydro) - 2.7.0-4
+
+The packages in the `orogen` repository were released into the `hydro` distro by running `/usr/bin/bloom-release --ros-distro hydro --track hydro orogen --edit` on `Sun, 15 Jun 2014 18:59:54 -0000`
+
+The `orogen` package was released.
+
+Version of package(s) in repository `orogen`:
+- rosdistro version: `2.7.0-3`
+- old version: `2.7.0-3`
+- new version: `2.7.0-4`
+
+Versions of tools used:
+- bloom version: `0.5.9`
+- catkin_pkg version: `0.2.2`
+- rosdep version: `0.10.27`
+- rosdistro version: `0.3.5`
+- vcstools version: `0.1.35`
+
+
 ## orogen (hydro) - 2.7.0-3
 
 User `rsmits@im-desktop-01` released the packages in the `orogen` repository into the `hydro` distro by running `/usr/bin/bloom-release --rosdistro hydro --track hydro orogen` on `Tue, 04 Mar 2014 11:31:38 -0000`
