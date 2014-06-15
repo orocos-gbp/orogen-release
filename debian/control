@@ -1,0 +1,12 @@
+Source: ros-hydro-orogen
+Section: misc
+Priority: extra
+Maintainer: OCL Development Team <orocos-dev@lists.mech.kuleuven.be>
+Build-Depends: debhelper (>= 9.0.0), cmake, libruby1.8, ruby1.8-dev, rubygems1.8
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-hydro-orogen
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libruby1.8, ros-hydro-catkin, ros-hydro-typelib, ros-hydro-utilrb, ruby1.8-dev, rubygems1.8
+Description: orogen offers a specification interface for components developped in the Orocos Realtime Toolkit. Moreover, it generates the specified modules, thus offering an easy and fast development process.
