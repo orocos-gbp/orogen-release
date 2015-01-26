@@ -1,3 +1,24 @@
+## orogen (indigo) - 2.8.0-0
+
+The packages in the `orogen` repository were released into the `indigo` distro by running `/usr/bin/bloom-release --track indigo --ros-distro indigo orogen --new` on `Mon, 26 Jan 2015 17:33:49 -0000`
+
+The `orogen` package was released.
+
+Version of package(s) in repository `orogen`:
+- upstream repository: https://github.com/orocos-toolchain/orogen.git
+- release repository: https://github.com/orocos-gbp/orogen-release.git
+- rosdistro version: `null`
+- old version: `null`
+- new version: `2.8.0-0`
+
+Versions of tools used:
+- bloom version: `0.5.16`
+- catkin_pkg version: `0.2.6`
+- rosdep version: `0.11.0`
+- rosdistro version: `0.4.0`
+- vcstools version: `0.1.36`
+
+
 ## orogen (hydro) - 2.7.0-4
 
 The packages in the `orogen` repository were released into the `hydro` distro by running `/usr/bin/bloom-release --ros-distro hydro --track hydro orogen --edit` on `Sun, 15 Jun 2014 18:59:54 -0000`
