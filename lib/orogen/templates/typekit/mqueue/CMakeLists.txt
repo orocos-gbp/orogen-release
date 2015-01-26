@@ -5,7 +5,7 @@ if(NOT APPLE)
 # OrocosRTT_PREFIX has been set by the pkg-config find modules:
 find_package(Orocos-RTT REQUIRED rtt-transport-mqueue HINTS ${OrocosRTT_PREFIX}/lib/cmake/orocos-rtt)
 
-<% typekit_deps = typekit.plugin('mqueue').dependencies(typekit); %>
+<% typekit_deps = typekit.plugin('mqueue').dependencies %>
 <%= Generation.cmake_pkgconfig_require(typekit_deps, 'mqueue') %>
 
 orocos_find_package(rtt_typelib REQUIRED)

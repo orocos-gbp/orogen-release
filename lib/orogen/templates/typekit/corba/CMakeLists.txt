@@ -1,6 +1,6 @@
 # Generated from orogen/lib/orogen/templates/typekit/corba/CMakeLists.txt
 
-<% typekit_deps = typekit.plugin('corba').dependencies(typekit); %>
+<% typekit_deps = typekit.plugin('corba').dependencies %>
 
 find_package(OrocosCORBA REQUIRED COMPONENTS Typekit)
 add_definitions(${OrocosCORBA_DEFINES})
@@ -36,6 +36,7 @@ target_link_libraries(${libname_corba}
 
 <%= Generation.cmake_pkgconfig_link('corba', '${libname_corba}', typekit_deps) %>
 target_link_libraries(${libname_corba} LINK_INTERFACE_LIBRARIES ${OROCOS-RTT_CORBA_LIBRARIES})
+set_target_properties(${libname_corba} PROPERTIES INTERFACE_LINK_LIBRARIES "${OROCOS-RTT_CORBA_LIBRARIES}")
 
 SET(PKG_CONFIG_FILE_CORBA ${CMAKE_CURRENT_BINARY_DIR}/<%= typekit.name %>-transport-corba-${OROCOS_TARGET}.pc)
 CONFIGURE_FILE(<%= typekit.name %>-transport-corba.pc.in ${PKG_CONFIG_FILE_CORBA} @ONLY)
@@ -43,7 +44,6 @@ CONFIGURE_FILE(<%= typekit.name %>-transport-corba.pc.in ${PKG_CONFIG_FILE_CORBA
 install(FILES ${PKG_CONFIG_FILE_CORBA} DESTINATION lib/pkgconfig)
 install(FILES
     <%= headers.join("\n   ") %>
-    Convertions.hpp
     <%= typekit.name %>Types.idl
     ${CMAKE_CURRENT_BINARY_DIR}/<%= typekit.name %>TypesC.h
     DESTINATION include/orocos/<%= typekit.name %>/transports/corba)
