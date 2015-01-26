@@ -1,0 +1,12 @@
+Source: ros-indigo-orogen
+Section: misc
+Priority: extra
+Maintainer: OCL Development Team <orocos-dev@lists.mech.kuleuven.be>
+Build-Depends: debhelper (>= 9.0.0), cmake, libruby1.9.1, ruby1.9.1, ruby1.9.1-dev
+Homepage: http://rock-robotics.org/documentation/orogen
+Standards-Version: 3.9.2
+
+Package: ros-indigo-orogen
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libruby1.9.1, rake, ros-indigo-catkin, ros-indigo-metaruby, ros-indigo-rtt, ros-indigo-rtt-typelib, ros-indigo-typelib, ros-indigo-utilrb, ruby-nokogiri, ruby1.9.1, ruby1.9.1-dev
+Description: orogen offers a specification interface for components developped in the Orocos Realtime Toolkit. Moreover, it generates the specified modules, thus offering an easy and fast development process.
